@@ -18,21 +18,22 @@ describe('SauceDemo Automation Test', () => {
         loginPage.enterUsername('standard_user');
         loginPage.enterPassword('secret_sauce');
         loginPage.clickLogin();
-        //cy.log('Logged in successfully.');
+        cy.log('Logged in successfully.');
 
         //Add item to cart
         inventoryPage.addItemToCart('Sauce Labs Backpack');
         inventoryPage.goToCart();
-        //cy.log('Item added to cart.');
+        cy.log('Item added to cart.');
 
         // Checkout
         cartPage.clickCheckout();
         checkoutPage.fillForm('John', 'Doe', '12345');
         checkoutPage.clickContinue();
         checkoutPage.clickFinish();
-        //cy.log('Checkout completed.');
+        cy.log('Checkout completed.');
 
         // Validate success
-        
+        checkoutPage.verifySuccess();
+        cy.log('Order placed successfully');        
     });
 });
