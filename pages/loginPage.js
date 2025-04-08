@@ -18,6 +18,7 @@ class LoginPage {
         cy.get('[data-test="login-button"]', { timeout: 10000 }).should('be.visible').click();
     }
 }
+//Just a note: I had issues with the homepage of Saucedemo timing out, hence adding in the timeouts.
 
 export default LoginPage;
 
